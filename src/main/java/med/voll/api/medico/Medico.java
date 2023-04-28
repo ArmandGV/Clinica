@@ -18,7 +18,7 @@ import med.voll.api.direccion.Direccion;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Medico {
+public  class Medico {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +27,11 @@ public class Medico {
 	private String email;
 	private String documento;
 	private Especialidad especialidad;
+	
+	
+	public Medico() {
+		super();
+	}
 	@Embedded
 	private Direccion direccion;
 	public Medico(DatosRegistroMedico datosRegistroMedico) {
