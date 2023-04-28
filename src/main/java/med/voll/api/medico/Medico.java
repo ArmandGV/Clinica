@@ -2,6 +2,8 @@ package med.voll.api.medico;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,20 +27,23 @@ public  class Medico {
 	private Long id;
 	private String nombre;
 	private String email;
+	private String telefono;
 	private String documento;
+	@Enumerated(EnumType.STRING)
 	private Especialidad especialidad;
-	
+	@Embedded
+	private Direccion direccion;
 	
 	public Medico() {
 		super();
 	}
-	@Embedded
-	private Direccion direccion;
+	
 	public Medico(DatosRegistroMedico datosRegistroMedico) {
 		
 		
 		this.nombre = datosRegistroMedico.nombre();
 		this.email = datosRegistroMedico.email();
+		this.telefono = datosRegistroMedico.telefono();
 		this.documento = datosRegistroMedico.documento();
 		this.especialidad = datosRegistroMedico.especialidad();
 		this.direccion = new Direccion(datosRegistroMedico.direccion());
