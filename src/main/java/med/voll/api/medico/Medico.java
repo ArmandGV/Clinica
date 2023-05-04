@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,7 @@ import med.voll.api.direccion.Direccion;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public  class Medico {
+public class Medico {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,10 +34,7 @@ public  class Medico {
 	private Especialidad especialidad;
 	@Embedded
 	private Direccion direccion;
-	
-	public Medico() {
-		super();
-	}
+
 	
 	public Medico(DatosRegistroMedico datosRegistroMedico) {
 		

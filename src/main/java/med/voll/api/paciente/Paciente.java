@@ -32,13 +32,6 @@ public class Paciente {
 	private String documento;	
 	@Embedded
 	private Direccion direccion;
-	
-	
-	
-	public Paciente() {
-		super();
-	}
-
 
 
 	public Paciente(DatosRegistroPaciente datosRegistroPaciente) {
